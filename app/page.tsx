@@ -9,7 +9,7 @@ export default function Home() {
             Run Until You See
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Discover your next role! Click the button and watch the magic happen.
+            Get your running challenge! Click Roll to discover something to look for on your next run.
           </p>
         </div>
         
