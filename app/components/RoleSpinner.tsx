@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import items from '../../data/items.json';
+import items from '../../data/roll.json';
 
 type SpinnerState = 'idle' | 'spinning' | 'slowing' | 'finished';
 
