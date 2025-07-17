@@ -13,6 +13,7 @@
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
     "setup": "./scripts/setup-dev.sh"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.4.1",
@@ -44,4 +45,8 @@
   ],
   "author": "Curtis Searle",
   "license": "Apache-2.0"
+}
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
