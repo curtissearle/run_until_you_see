@@ -30,20 +30,20 @@ export default function RoleSpinner() {
       setCurrentItem(getRandomItem());
     }, 100);
 
-    // After 2 seconds, start slowing down
+    // After 0.5 seconds, start slowing down (reduced from 2 seconds)
     timeoutRef.current = setTimeout(() => {
       setSpinnerState('slowing');
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
       }
 
-      // Slowing down phase - increasing intervals
-      let interval = 150;
+      // Slowing down phase - increasing intervals (faster progression)
+      let interval = 120;
       const slowDown = () => {
         setCurrentItem(getRandomItem());
-        interval += 50; // Increase interval each time to slow down
+        interval += 40; // Increase interval each time to slow down (reduced from 50)
         
-        if (interval <= 800) {
+        if (interval <= 500) { // Stop earlier (reduced from 800)
           setTimeout(slowDown, interval);
         } else {
           // Final selection
@@ -56,7 +56,7 @@ export default function RoleSpinner() {
       };
       
       slowDown();
-    }, 2000);
+    }, 500); // Reduced from 2000ms to 500ms
   };
 
   const resetSpinner = () => {
