@@ -1,0 +1,36 @@
+# Codespaces configuration for optimal GitHub Copilot Coding Agent experience
+machine: 
+  # Use 4-core machine for better performance with Next.js and TypeScript
+  type: 4core
+
+# Prebuild configuration for faster startup
+prebuild:
+  # Run npm install during prebuild for faster codespace startup
+  commands:
+    - npm install
+  # Prebuild when package.json changes
+  triggers:
+    - package.json
+    - package-lock.json
+
+# Port forwarding configuration  
+ports:
+  # Next.js development server
+  3000:
+    visibility: public
+    description: "Next.js Development Server"
+  # Additional port for services
+  3001: 
+    visibility: private
+    description: "Additional Next.js Services"
+
+# Environment variables for development
+env:
+  NODE_ENV: development
+  NEXT_TELEMETRY_DISABLED: 1
+
+# Poststart commands
+postStartCommand: |
+  echo "🚀 Codespace is ready for development!"
+  echo "Run 'npm run dev' to start the Next.js development server"
+  echo "GitHub Copilot is enabled and configured for optimal development experience"
